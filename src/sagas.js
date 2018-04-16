@@ -52,7 +52,7 @@ function* getUser() {
 
 function* signUp(action) {
   try {
-    yield call(auth.register, action.payload.username, action.payload.password)
+    yield call(auth.register, action.payload.username, action.payload.password, action.payload.attributes)
     yield put({
       type: actions.AUTH_SET_STATE,
       payload: {
